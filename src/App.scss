@@ -1,0 +1,210 @@
+$background: #303644;
+$blue1: #3f4658;
+$blue2: #505974;
+$blue3: #909db9;
+$blue4: #d2dcf5;
+$blue5: #eef3ff;
+
+body {
+  background: $background;
+  color: $blue4;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.searchBar {
+  font-size: 1.25rem;
+  flex: 1;
+}
+
+.locationButton {
+  cursor: pointer;
+  background-color: $blue4;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0.5rem;
+  color: #3a84df;
+  &:hover {
+    color: #4d9dff;
+  }
+}
+
+.unitSelector {
+  display: flex;
+  align-items: center;
+  color: $blue3;
+  position: relative;
+
+  label {
+    cursor: pointer;
+    font-size: 23px;
+    padding: 0 0.45rem;
+  }
+  input {
+    display: none;
+  }
+  .selected {
+    color: $blue4;
+  }
+}
+
+.weather {
+  margin-top: 3rem;
+  .current {
+    .grid {
+      display: grid;
+      justify-content: center;
+      grid-template-areas:
+        'name name name'
+        'icon temp max'
+        'icon temp min'
+        'icon feels feels'
+        'description description description';
+      .name {
+        grid-area: name;
+        text-align: center;
+        font-size: 8vw;
+        color: $blue5;
+      }
+      .icon {
+        grid-area: icon;
+        position: relative;
+        justify-self: center;
+        margin-top: -4vw;
+        width: 20vw;
+        height: 20vw;
+      }
+      img {
+        width: 25vw;
+      }
+      .temp {
+        grid-area: temp;
+        font-size: 12vw;
+        align-self: center;
+        justify-self: center;
+      }
+      .max {
+        grid-area: max;
+        text-align: left;
+        justify-self: flex-start;
+        align-self: flex-end;
+        font-size: 4vw;
+        color: $blue3;
+      }
+      .min {
+        grid-area: min;
+        justify-self: flex-start;
+        align-self: flex-start;
+        font-size: 4vw;
+        color: $blue2;
+      }
+      .feels-like {
+        grid-area: feels;
+        align-self: flex-start;
+        font-size: 4vw;
+        color: $blue3;
+      }
+      .description {
+        grid-area: description;
+        text-align: center;
+        font-size: 5vw;
+        color: $blue4;
+      }
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      font-size: 3.5vw;
+      text-align: center;
+      .statsLeft,
+      .statsRight {
+        margin: 2rem;
+      }
+    }
+  }
+  .forecast {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .day {
+      margin: 0.5rem;
+    }
+    .date {
+      color: $blue3;
+      font-size: 3.5vw;
+      margin-bottom: 0.5rem;
+    }
+    .icon {
+      margin-top: -4vw;
+      width: 18vw;
+      height: 16vw;
+      img {
+        width: 20vw;
+      }
+    }
+
+    .tempGrid {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-areas:
+        'temp max'
+        'temp min';
+    }
+    .temp {
+      font-size: 6vw;
+      grid-area: temp;
+      margin-right: 1vw;
+    }
+    .max {
+      grid-area: max;
+      font-size: 2.5vw;
+      align-self: flex-end;
+      color: $blue3;
+    }
+    .min {
+      grid-area: min;
+      font-size: 2.5vw;
+      align-self: flex-start;
+      color: $blue2;
+    }
+  }
+}
+
+@keyframes pointer {
+  from {
+    top: 5px;
+  }
+  to {
+    top: -5px;
+  }
+}
+
+.no-weather {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 18rem auto 0 auto;
+  font-size: 20px;
+  .pointing-arrow {
+    color: $blue2;
+    top: 5px;
+    margin-right: 2rem;
+    position: relative;
+    animation-name: pointer;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+}
