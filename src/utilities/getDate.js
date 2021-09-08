@@ -1,4 +1,4 @@
-const weekdays = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'];
+const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 
 function ordinal_suffix_of(i) {
   var j = i % 10,
@@ -18,7 +18,7 @@ function ordinal_suffix_of(i) {
 export default function getDate(timestamp) {
   const date = new Date(timestamp * 1000);
   const day = date.getDate();
-  const weekday = weekdays[date.getDay() - 1];
+  const weekday = weekdays[date.getDay()];
   const formatDate = weekday + ' ' + ordinal_suffix_of(day);
   return formatDate;
 }
