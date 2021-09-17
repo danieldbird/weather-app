@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import isEmpty from '../utilities/utilities';
+import { isEmpty } from '../utilities/utilities';
 import getWeather from './getWeather';
 import CurrentWeather from './CurrentWeather';
 import ForecastedWeather from './ForecastedWeather';

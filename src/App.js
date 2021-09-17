@@ -13,7 +13,11 @@ function App() {
   return (
     <div className="container">
       <div className="searchContainer">
-        <CitySearchInput setSelectedCity={setSelectedCity} setPosition={setPosition} />
+        <CitySearchInput
+          selectedCity={selectedCity}
+          setSelectedCity={setSelectedCity}
+          setPosition={setPosition}
+        />
         <LocationButton setSelectedCity={setSelectedCity} setPosition={setPosition} />
         <UnitSelection unit={unit} setUnit={setUnit} />
       </div>

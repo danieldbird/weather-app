@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import filterResults from './filterResults';
+import { isEmpty } from '../utilities/utilities';
 
-function CitySearchInput({ setSelectedCity, setPosition }) {
+function CitySearchInput({ selectedCity, setSelectedCity, setPosition }) {
   const [searchResults, setSearchResults] = useState([]);
 
   // if there is input in the search box, filter results, otherwise clear results
@@ -61,6 +62,7 @@ function CitySearchInput({ setSelectedCity, setPosition }) {
       styles={customStyles}
       placeholder="Search location..."
       options={searchResults}
+      value={isEmpty(selectedCity) ? null : selectedCity}
       onInputChange={(input) => {
         handleSearchInput(input);
       }}
