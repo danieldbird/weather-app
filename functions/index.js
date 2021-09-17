@@ -29,7 +29,7 @@ app.post('/getWeather', (req, res) => {
       );
       return response.data;
     } catch (error) {
-      return error;
+      return 'Failed to fetch';
     }
   }
   getWeather(req.body.lat, req.body.lon, req.body.unit).then((data) => {
